@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#rainingCode { /*GIF i bakgrunnen*/
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+}
+
+h2 {
+    color: rgb(0, 184, 15);
+    font-family: 'Matrix', courier;
+    text-shadow: 0 0 10px black;
+}
+
+#redPillTextBox:hover h2, #bluePillTextBox:hover h2, #boxWithText:hover h2 {
+    color: rgb(1, 255, 22);
+}
+
+#redPillTextBox:hover, #bluePillTextBox:hover, #boxWithText:hover {
+    box-shadow: 0 0 25px rgb(1, 255, 22);
+}
+
+#container {
+    cursor: default;
+    position: relative;
+    width: 1500px;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+#boxWithText {
+    position: absolute;
+    top: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(1, 255, 22, 0.5);
+    padding: 10px 40px 10px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    z-index: 1;
+    text-align: center;
+}
+
+#bluePillTextBox {
+    font-size: 12px;
+    position: absolute;
+    top: 300px;
+    width: 500px;
+    height: 110px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(1, 255, 22, 0.5);
+    padding: 10px 40px 10px 40px;
+    z-index: 1;
+    border-radius: 20px;
+    transform: translateX(350px);
+}
+
+#redPillTextBox {
+    font-size: 12px;
+    position: absolute;
+    top: 300px;
+    width: 500px;
+    height: 110px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(1, 255, 22, 0.5);
+    padding: 10px 40px 10px 40px;
+    z-index: 1;
+    border-radius: 20px;
+    transform: translateX(-350px);
+}
+
+#boxToAlignPillsInHands {
+    position: absolute;
+    display: flex;
+    top: 150px;
+}
+
+#handsImage {
+    height: 900px;
+    filter: drop-shadow(0 0 5px rgba(1, 255, 22, 0.2));
+}
+
+#redPill {
+    position: absolute;
+    height: 102px;
+    top: 388px;
+    left: 433px;
+    z-index: 5;
+    transition: 0.5s;
+}
+
+#bluePill {
+    position: absolute;
+    height: 115px;
+    top: 413px;
+    right: 445px;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+#redPill:hover { /*Glød på den røde pillen ved hover*/
+    filter: drop-shadow(0 0 20px rgb(255, 0, 0)) brightness(200%);
+    transition: 0.5s;
+}
+
+#bluePill:hover { /*Glød på den blå pillen ved hover*/
+    filter: drop-shadow(0 0 15px rgb(0, 43, 184)) brightness(250%) ;
+    transition: 0.5s;
+}

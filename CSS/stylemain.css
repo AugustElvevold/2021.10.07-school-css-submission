@@ -1,0 +1,428 @@
+body {
+    cursor: default;
+    margin: 20px 0 auto 0;
+    width: 1800px;
+    overflow: hidden;
+}
+
+@keyframes timeout {
+    from {}
+    to {opacity: 0;
+        transform: translateY(-4000px)}
+}
+
+#matrixIntroGif {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    animation-name: timeout;
+    animation-fill-mode: forwards;
+    animation-delay: 5.2s; /* Fjærner gifen ut av syne etter 5.2 sekunder, så man kan bruke nettsiden */
+}
+
+@keyframes shuffle { /* Scramble text effekt */
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(-600px);}
+}
+
+#divSpan {
+    position: relative;
+    width: 90vw;
+    margin: 0 5vw auto 5vw;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Matrix', 'Courier New', Courier, monospace;
+}
+
+#header1, #header2, #header3, #header4 {
+    margin: 0;
+    padding: 4px 40px 4px 40px;
+    height: 60px;
+    overflow: hidden;
+}
+
+#header1:hover , #header2:hover , #header3:hover , #header4:hover {
+    color: rgb(37, 201, 59);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    background-color: rgba(36, 36, 36);
+}
+
+#header1 span, #header2 span, #header3 span, #header4 span {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#dropdown1:hover span, #dropdown2:hover span, #dropdown3:hover span, #dropdown4:hover span {
+    animation: shuffle steps(10) 0.8s;
+}
+
+#dropdown1:hover > #header1, #dropdown2:hover > #header2, #dropdown3:hover > #header3, #dropdown4:hover > #header4 {
+    color: rgb(37, 201, 59);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    background-color: rgba(36, 36, 36);
+    border-radius: 10px 10px 0 0;
+}
+
+.dropdownContent {
+    position: absolute;
+    display: none;
+    top: 68px;
+    height: 600px;
+    right: 0;
+    left: 0;
+    font-size: 20px;
+}
+
+.dropdownContent>div, .dropdownContent>p{
+    position: absolute;
+    margin: 50px;
+    width: 55vw;
+}
+
+.dropdownContent>p {
+    bottom: 220px;
+}
+
+/* Viser dropdown meny når man holder over header1 eller selve dropdown menyen */
+.dropdownContent:hover, #header1:hover + .dropdownContent, #header2:hover + .dropdownContent , #header3:hover + .dropdownContent , #header4:hover + .dropdownContent {
+    display: block;
+    color: rgba(37, 201, 59, 0.795);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    background-color: rgba(36, 36, 36);
+    transform: translateY(0);
+}
+
+/*Animasjon av skuespillerne, karakterene, og cover bildene, på dropdown innholdet ':-D */
+/*------------------------------------------------------------1-----------------------------------------------------------------*/
+@keyframes glitchImageInfinite {
+    0% {background-position: 5px 25px;
+        opacity: 1;
+        top: -30px;
+        height: 30px;
+        filter: sepia(50%);
+    }
+    8% {background-position-x: 5px }
+    8.1% {background-position-x: 50px }
+    8.6% {background-position-x: 50px }
+    8.7% {background-position-x: -5px }
+    9.1% {background-position-x: -5px }
+    9.2% {background-position-x: 5px }
+
+    20.9% {background-position-x: 5px;
+        height: 30px;
+    }
+    21% {background-position-x: -3px ;
+        height: 50px;
+    }
+    21.5% {background-position-x: -3px ;
+        height: 50px;
+    }
+    21.6% {background-position-x: 5px ;
+        height: 30px;
+    }
+
+    49.9% {background-position-x: 5px }
+    50% {background-position-x: -10px }
+    50.4% {background-position-x: -10px }
+    50.5% {background-position-x: 0px }
+    51.9% {background-position-x: 0px }
+    52% {background-position-x: 20px }
+    52.4% {background-position-x: 20px }
+    52.5% {background-position-x: -5px }
+
+    73% {background-position-x: -5px }
+    73.1% {background-position-x: 13px }
+    73.6% {background-position-x: 13px }
+    73.7% {background-position-x: -13px }
+    74.1% {background-position-x: -13px }
+    74.2% {background-position-x: 10px }
+
+    90.9% {background-position-x: 10px;
+        height: 30px;
+    }
+    91% {background-position-x: -3px ;
+        height: 40px;
+    }
+    91.5% {background-position-x: -3px ;
+        height: 40px;
+    }
+    91.6% {background-position-x: 5px ;
+        height: 30px;
+    }
+
+    100% {background-position: 5px -505px;
+        opacity: 1;
+        top: 500px;
+        height: 30px;
+        filter: sepia(50%);
+    }
+}
+
+@keyframes glitchImageTransition{
+    0%  {background-position: 5px 0;
+        filter: hue-rotate(0deg);
+    }
+    5%  {background-position: -5px -3px;}
+    10% {background-position: 3px 6px;}
+    15% {background-position: -3px -9px;}
+    20% {background-position: 1px 2px;}
+    25% {background-position: -4px -1px;}
+    30% {background-position: 9px 4px;}
+    35% {background-position: -6px -8px;}
+    40% {background-position: 4px 4px;}
+    45% {background-position: -11px -9px;}
+    50% {background-position: -28px 30px;
+        background: var(--startImage);
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+        opacity: 0.3;
+    }
+    55% {background-position: -14px -11px;
+        background: var(--endImage);
+        opacity: 0.3;
+    }
+    60% {background-position: 13px 13px;}
+    65% {background-position: -8px -9px;}
+    70% {background-position: 5px 8px;}
+    75% {background-position: -4px -1px;}
+    80% {background-position: 4px 4px;}
+    85% {background-position: -3px -3px;}
+    90% {background-position: 2px 4px;}
+    99% {background-position: -1px -3px;
+        filter: hue-rotate(360deg);
+        opacity: 0.3;
+    }
+    100% {background-position: 0 0;
+        background: var(--endImage);
+        background-size: cover;
+        opacity: 1;
+    }
+}
+
+@keyframes glitchText { /* glitchtext overgang*/
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(-510px);}
+}
+
+.moviePosterImageContainer { /* For å kunne animere relativt til container*/
+    cursor: pointer;
+    position: absolute;
+    right: -720px;
+}
+
+.moviePosterImage {
+    position: relative;
+    height: 500px;
+    width: 333px;
+    background-image: var(--posterImage);
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(1, 255, 22, 0.5);
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.moviePosterImage:hover {
+    box-shadow: 0 0 25px rgb(1, 255, 22);
+    transition: 0.2s;
+}
+
+.moviePosterImage::before {
+    position: absolute;
+    content: "";
+    height: 500px;
+    width: 333px;
+    background-image: var(--posterImage);
+    background-size: cover;
+    opacity: 0;
+}
+
+.moviePosterImage:hover:before {
+    animation: glitchImageInfinite 8s linear infinite;
+}
+
+#theMatrix1, #theMatrix1:hover {
+    --posterImage: url("../images/the-matrix-1.jpg");
+}
+
+#theMatrix2, #theMatrix2:hover {
+    --posterImage: url("../images/the-matrix-2.jpg");
+}
+
+#theMatrix3, #theMatrix3:hover {
+    --posterImage: url("../images/the-matrix-3.jpg");
+}
+
+#theMatrix4, #theMatrix4:hover {
+    --posterImage: url("../images/the-matrix-4.jpg");
+}
+
+/* For å plassere bildene på riktig plass */
+/* _________________________2___________________________ */
+.actorCharacterDisplay {
+    position: relative;
+    bottom: -50px;
+    width: 1098px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.glitchImages{
+    top: 10px;
+    position: absolute;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.justifyContent {
+    position: relative;
+    font-family: courier;
+    font-size: 10px;
+    font-weight: 600;
+}
+/* _________________________2___________________________ */
+
+/* Samlet felles kode for alle karakterer/skuespillere */
+/* _________________________3____________________________ */
+.actorCharacterImageCodeCompressing {
+    cursor: pointer;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(1, 255, 22, 0.5);
+    transition: 0.5s;
+}
+
+.actorCharacterImageCodeCompressing:hover {
+    box-shadow: 0 0 25px rgb(1, 255, 22);
+    transition: 0.2s;
+}
+
+.actorCharacterImageCodeCompressing::before {
+    position: absolute;
+    content: "";
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    opacity: 0;
+}
+
+.actorCharacterImageCodeCompressing:hover:before {
+    animation: glitchImageTransition 0.5s forwards;
+}
+
+.glitchText {
+    position: absolute;
+    transform: translateX(-50px);
+    width: 250px;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.actorCharacterImageCodeCompressing:hover ~ .glitchText h1{
+    animation: glitchText steps(14) 0.5s forwards;
+}
+/* _________________________3____________________________ */
+
+/*KEANU REEVES -> NEO-------------------------*/
+.neo, .neo::before, .neo:hover:before{
+    background: url("../images/actor-image-keanu-reeves.jpg");
+    background-size: cover;
+    --startImage: url("../images/actor-image-keanu-reeves.jpg");
+    --endImage: url("../images/1999-matrix-image-neo.jpg");
+}
+
+
+/*LAURENCE FISHBURNE -> MORPHEUS--1999-2003---------*/
+.morpheus, .morpheus::before, .morpheus:hover:before {
+    background: url("../images/actor-image-laurence-fishburne.jpg") no-repeat;
+    background-size: cover;
+    --startImage: url("../images/actor-image-laurence-fishburne.jpg");
+    --endImage: url("../images/1999-matrix-image-morpheus.jpg");
+}
+
+/*YAHYA ABDUL-MATEEN II -> MORPHEUS--2021--------------*/
+.morpheus-2021, .morpheus-2021::before, .morpheus-2021::before {
+    background: url("../images/actor-image-yahya-abdul-mateen-II.jpg") no-repeat;
+    background-size: cover;
+    --startImage: url("../images/actor-image-yahya-abdul-mateen-II.jpg");
+    --endImage: url("../images/2021-matrix-image-morpheus.jpg");
+}
+
+/*CARRIE-ANNE MOSS -> TRINITY---------------------*/
+.trinity, .trinity::before, .trinity:hover:before {
+    background: url("../images/actor-image-carrie-anne-moss.jpg") no-repeat;
+    background-size: cover;
+    --startImage: url("../images/actor-image-carrie-anne-moss.jpg");
+    --endImage: url("../images/1999-matrix-image-trinity.jpg");
+}
+
+/*HUGO WEAWING -> AGENT SMITH--1999-2003---------------*/
+.agentSmith, .agentSmith::before, .agentSmith:hover:before {
+    background: url("../images/actor-image-hugo-weaving.jpg") no-repeat;
+    background-size: cover;
+    --startImage: url("../images/actor-image-hugo-weaving.jpg");
+    --endImage: url("../images/1999-matrix-image-agent_smith.jpg");
+}
+
+/*DANIEL BERNHARDT -> AGENT SMITH--2021-----------*/
+.agentSmith-2021, .agentSmith-2021::before, .agentSmith-2021:hover:before {
+    background: url("../images/actor-image-daniel-bernhardt.jpg") no-repeat;
+    background-size: cover;
+    --startImage: url("../images/actor-image-daniel-bernhardt.jpg");
+    --endImage: url("../images/2021-matrix-image-agent-smith.jpg");
+}
+
+/*------------------------------------------------------------1-----------------------------------------------------------------*/
+
+
+
+/*bakgrunnsbilde/animasjon-------------------------------------------*/
+#keanueReeves {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -2;
+}
+
+#keanueReevesDodge {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -3;
+}
+
+#dodgeHitBox { /* boks som aktiverer bilde der neo dukker unna, på hover*/
+    height: 49vh;
+    width: 11vw;
+    position: absolute;
+    top: 27vh;
+    left: 25vw;
+    z-index: -1;
+}
+
+#dodgeHitBox:hover ~ #keanueReevesDodge{
+    border: 1px solid red;
+    z-index: -2;
+}
+/*---------------------------------------------------------------------*/
+
+#footer {
+    position: fixed;
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: green;
+    text-align: center;
+}
