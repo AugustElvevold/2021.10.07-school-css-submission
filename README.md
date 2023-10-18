@@ -5,6 +5,7 @@ This project, created for a CSS course assignment, is a mini creative project co
 
 ## Live Preview
 Preview the project live [here](https://augustelvevold.github.io/2021.10.07-school-css-submission-matrix/introside.html).
+For the best visual experience, view on a 1920x1080 monitor as variations in resolution affects the layout.
 
 ## Usage
 Upon launching `introside.html`, users are presented with a choice between a red or blue pill, reminiscent of the iconic scene from The Matrix. Choosing the blue pill redirects users to vg.no, while the red pill leads to the next page. 
